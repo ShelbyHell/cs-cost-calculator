@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Калькулятор</title>
+	<link rel="stylesheet" href="styles.css" id="main-styles">
+</head>
+<body>
+    <h1>CS Калькулятор цены игрока</h1>
+    <form id="calcForm">
+        <div class="form-row">
+            <label for="age">Возраст:
+                <span class="tooltip">?
+                    <span class="tooltiptext">Сколько лет игроку?</span>
+                </span>
+            </label>
+            <input type="number" id="age" name="age" min="15" max="150" required>
+        </div>
+
+        <div class="form-row">
+            <label for="rating">Рейтинг 2.0:
+                <span class="tooltip">?
+                    <span class="tooltiptext">Статистика игрока на HLTV ORG за 6 месяцев</span>
+                </span>
+            </label>
+            <input type="number" step="0.01" id="rating" name="rating" required>
+        </div>
+
+        <div class="form-row">
+            <label for="teamRank">Место команды в рейтинге:
+                <span class="tooltip">?
+                    <span class="tooltiptext">На каком месте располагается команда игрока</span>
+                </span>
+            </label>
+            <input type="number" id="teamRank" name="teamRank" required>
+        </div>
+
+        <button type="button" onclick="calculatePrice()">Рассчитать цену</button>
+    </form>
+
+    <div id="loading" class="spinner"></div>
+    <div id="result"></div>
+	<script src="script.js"></script>
+</body>
+</html>
